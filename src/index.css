@@ -6,7 +6,18 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+  z-index: 99;
+}
+
+*::-webkit-scrollbar-track {
+  background: #eef2ff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c7d2fe;
+  border-radius: 20px;
+  border: 3px solid #eef2ff;
 }

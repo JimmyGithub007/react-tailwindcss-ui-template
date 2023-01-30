@@ -31,43 +31,45 @@ const DataGrid = (props) => {
     }, [pageNum, rowsPerPage, props.data]);
 
     return (<>
-        <table className="w-full text-left">
-            <thead className="bg-gray-50 text-gray-700 uppercase">
-                <tr>
+        <div className="overflow-x-auto">
+            <table className="w-full text-left">
+                <thead className="bg-gray-50 text-gray-700 uppercase">
+                    <tr>
+                        {
+                            props.columns.map((col, key) => (
+                                <th className={`${col.sortable && "cursor-pointer hover:bg-gray-100"} px-6 py-3`} key={key} onClick={() => { handleSort(col.id) } }>
+                                    <span className="flex items-center justify-between">{col.name}
+                                        {   col.sortable && ( order.id === col.id && order.direction ?
+                                            (order.direction === 'asc' ? <BiSortAZ /> : <BiSortZA />) : 
+                                            <BiSortAlt2 />)
+                                        }
+                                    </span>
+                                </th>
+                            ))
+                        }                    
+                    </tr>
+                </thead>
+                <tbody>
                     {
-                        props.columns.map((col, key) => (
-                            <th className={`${col.sortable && "cursor-pointer hover:bg-gray-100"} px-6 py-3`} key={key} onClick={() => { handleSort(col.id) } }>
-                                <span className="flex items-center justify-between">{col.name}
-                                    {   col.sortable && ( order.id === col.id && order.direction ?
-                                        (order.direction === 'asc' ? <BiSortAZ /> : <BiSortZA />) : 
-                                        <BiSortAlt2 />)
-                                    }
-                                </span>
-                            </th>
-                        ))
-                    }                    
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    _.orderBy(props.data, [order.id], [order.direction])
-                    .slice(pageNum * rowsPerPage, pageNum * rowsPerPage + rowsPerPage)
-                    .map((data, k1) => {
-                        const k = k1+(pageNum * rowsPerPage);
-                        return <tr className="bg-white border-b hover:bg-gray-50" key={k}>
-                            {
-                                props.columns.map((col, k2) => (
-                                  
-                                    <td className="px-6 py-4" key={k2}>
-                                        {_.get(data, col.id)}
-                                    </td>
-                                ))
-                            }
-                        </tr>
-                    })
-                }
-            </tbody>
-        </table>
+                        _.orderBy(props.data, [order.id], [order.direction])
+                        .slice(pageNum * rowsPerPage, pageNum * rowsPerPage + rowsPerPage)
+                        .map((data, k1) => {
+                            const k = k1+(pageNum * rowsPerPage);
+                            return <tr className="bg-white border-b hover:bg-gray-50" key={k}>
+                                {
+                                    props.columns.map((col, k2) => (
+                                    
+                                        <td className="px-6 py-4" key={k2}>
+                                            {_.get(data, col.id)}
+                                        </td>
+                                    ))
+                                }
+                            </tr>
+                        })
+                    }
+                </tbody>
+            </table>            
+        </div>
         {
             props.pagination && <div className="flex justify-between pt-4">
                 <span className="text-gray-400 text-sm">From {(pageNum * rowsPerPage)+(_.size(props.data) > 0 && 1)} to { disableBtn2 ? _.size(props.data) : pageNum * rowsPerPage + rowsPerPage } of {_.size(props.data)}</span>
