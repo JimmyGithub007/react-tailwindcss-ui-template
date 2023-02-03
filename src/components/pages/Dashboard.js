@@ -2,7 +2,7 @@ import Shell from "../shared/Shell";
 import { BiLineChart, BiLineChartDown } from "react-icons/bi";
 import { GiPayMoney, GiReceiveMoney } from "react-icons/gi";
 import DemoPie from "../charts/DemoPie";
-import DemoBar from "../charts/DemoPar";
+import DemoBar from "../charts/DemoBar";
 
 const Dashboard = () => {
     return (<Shell>

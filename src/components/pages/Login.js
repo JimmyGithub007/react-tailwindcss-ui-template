@@ -1,7 +1,14 @@
 import { BsFacebook, BsFillShieldLockFill, BsGithub, BsGoogle } from 'react-icons/bs';
 import { BiLogIn } from 'react-icons/bi';
+import Button from '../elements/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const login = () => {
+        navigate("/dashboard");
+    }
+
     return (<div className="flex h-screen items-center">
         <div className="bg-white flex flex-col px-8 py-6 gap-5 w-screen sm:w-[500px]">
             <div className="flex items-center gap-2">
@@ -19,7 +26,7 @@ const Login = () => {
             </div>
             <input className="shadow border rounded w-full py-2 px-3 text-gray-700" type="text" placeholder="Username" />
             <input className="shadow border rounded w-full py-2 px-3 text-gray-700" type="password" placeholder="Password" />
-            <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full shadow-lg">LOGIN</button>
+            <Button onClick={() => login() } type="primary">LOGIN</Button>
             <a className="font-bold text-sm text-indigo-500 hover:text-indigo-800" href="/">Forgot Password?</a>
             <span className="text-gray-700">or login with</span>
             <div className="flex gap-2">

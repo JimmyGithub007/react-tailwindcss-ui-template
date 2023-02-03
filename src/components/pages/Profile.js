@@ -6,8 +6,8 @@ import DemoRadar from "../charts/DemoRadar";
 
 const Profile = () => {
     return (<Shell>
-        <div className="flex flex-col relative rounded">
-            <div className="bg-indigo-500 flex h-[150px] items-center relative rounded w-full p-4 gap-4">
+        <div className="flex flex-col relative">
+            <div className="bg-indigo-500 flex h-[150px] items-center relative rounded-2xl w-full p-4 gap-4">
                 <img alt="undraw" className="bg-white rounded-full h-28 self-center shadow-lg z-10 top-[90px]" src={`https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png`} />
                 <div className="flex flex-col text-white z-10">
                     <span className="text-2xl font-bold">Jimmy Hoe (29)</span>
@@ -28,8 +28,8 @@ const Profile = () => {
                 </div>
             </div>
             <div className="grid grid-cols-3 gap-4">
-                <div className="col-span-2 flex flex-col gap-3">
-                    <div className="bg-white rounded shadow-lg flex flex-col gap-2 p-4">
+                <div className="col-span-2 flex flex-col gap-5">
+                    <div className="bg-white rounded-2xl shadow-lg flex flex-col gap-2 p-4">
                         <span className="border-l-4 pl-4 font-bold text-xl">Personal Info</span>
                         <span>First Name: <b>Jimmy</b> |  Last Name: <b>Hoe</b></span>
                         <span>Date of Birth: <b>1994-09-18</b></span>
@@ -38,7 +38,7 @@ const Profile = () => {
                         <span>Religion: <b>Buddhist</b></span>
                         <span>Marital Status: <b>Married</b></span>
                     </div>
-                    <div className="bg-white rounded shadow-lg flex flex-col gap-2 p-4">
+                    <div className="bg-white rounded-2xl shadow-lg flex flex-col gap-2 p-4">
                         <span className="border-l-4 flex items-center pl-2 text-lg text-gray-700"><RiUserLocationFill className="mr-2" /> Address</span>
                         <span>Country: <b>Malaysia</b></span>
                         <span>State: <b>Johor</b></span>
@@ -46,7 +46,7 @@ const Profile = () => {
                         <span>Postcode: <b>83000</b></span>
                         <span>Address: <b>60 Jalan Bukit Flora 33</b></span>
                     </div>
-                    <div className="bg-white rounded shadow-lg flex flex-col gap-2 p-4"> 
+                    <div className="bg-white rounded-2xl shadow-lg flex flex-col gap-2 p-4"> 
                         <span className="border-l-4 flex items-center pl-2 text-lg text-gray-700"><RiContactsBook2Fill className="mr-2" /> Contact</span>
                         <span>Home: <b>-</b></span>
                         <span>Phone: <b>(+60)12-3456780</b></span>
