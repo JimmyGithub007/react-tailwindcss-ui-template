@@ -9,10 +9,10 @@ const Drawer = (props) => {
         if(props.placement) {
             switch(props.placement) {
                 case "left":
-                    setCustomClass(` ${props.open ? "" : "-"}${props.width ? "left-["+props.width+"px] " :  ( props.open ? "left-0 " : "left-80 " ) }top-0 ${props.width ? "w-["+props.width+"px]" : "w-80"} h-screen`)
+                    setCustomClass(` ${props.width ? ( props.open ? "left-0 " : "left-["+props.width+"px] ") :  ( props.open ? "left-0 " : "-left-80 " ) }top-0 ${props.height ? "w-["+props.width+"px]" : "w-80"} h-screen`)
                     break;
                 case "right":
-                    setCustomClass(` ${props.open ? "" : "-"}${props.width ? "right-["+props.width+"px] " : ( props.open ? "right-0 " : "right-80 " )  }top-0 ${props.width ? "w-["+props.width+"px]" : "w-80"} h-screen`)
+                    setCustomClass(` ${props.width ? ( props.open ? "right-0 " : "right-["+props.width+"px] ") :  ( props.open ? "right-0 " : "-right-80 " ) }top-0 ${props.height ? "w-["+props.width+"px]" : "w-80"} h-screen`)
                     break;
                 case "top":
                     setCustomClass(` ${props.height ? ( props.open ? "top-0 " : "top-["+props.height+"px] ") :  ( props.open ? "top-0 " : "-top-80 " ) }left-0 ${props.height ? "h-["+props.height+"px]" : "h-80"} w-screen`)

@@ -20,7 +20,7 @@ const Shell = (props) => {
         <Sidebar collapse={collapse} setCollapse={setCollapse} />
         <div className={`duration-300 w-full ${collapse ? "lg:ml-[220px]" : "lg:ml-[55px]"}`}>
             <Header collapse={collapse} setCollapse={setCollapse} />
-            <div className="px-8 py-2 mt-[108px]">{props.children}</div>
+            <div className="px-8 py-2 mt-[108px] min-h-[calc(100vh-172px)]">{props.children}</div>
             <Footer />
         </div>
     </div>)

@@ -44,7 +44,7 @@ const Sidebar = (props) => {
             </div>
             <span className="font-bold text-xl text-red-500 whitespace-nowrap">ReactJS JimUI</span>
         </div>
-        <div className="min-h-[calc(100vh-112px)]">
+        <div className="min-h-[calc(100vh-112px)] overflow-y-auto">
             {
                 menus.map((menu, key) => (
                     menu.url ? 
